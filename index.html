@@ -3,99 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>US Patent Distribution Analysis</title>
+    <title>US Patent Distribution Analysis | 2000-2015</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            background-color: white;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
         }
+        
         h1 {
-            color: #2c3e50;
-            text-align: center;
+            font-size: 2.5em;
             margin-bottom: 10px;
+            font-weight: 700;
         }
+        
         .subtitle {
-            text-align: center;
-            color: #7f8c8d;
-            margin-bottom: 30px;
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-style: italic;
         }
+        
+        .viz-section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .viz-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
         iframe {
             width: 100%;
             height: 900px;
-            border: none;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .analysis {
+            font-size: 1.05em;
+            text-align: justify;
+        }
+        
+        .analysis p {
+            margin-bottom: 18px;
+        }
+        
+        .analysis strong {
+            color: #667eea;
+        }
+        
+        .key-finding {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin: 25px 0;
             border-radius: 4px;
         }
-        .analysis {
-            margin-top: 40px;
-            line-height: 1.6;
-            color: #2c3e50;
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+            font-size: 0.95em;
         }
-        .analysis h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #667eea, transparent);
+            margin: 50px 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Patent Distribution Across US Metropolitan Areas</h1>
-        <p class="subtitle">Interactive Analysis (2000-2015)</p>
-        
-        <!-- Your Interactive Map -->
-        <iframe src="patent_choropleth_interactive.html"></iframe>
-        
-        <!-- Your Analysis -->
-        <div class="analysis">
-            <h2>Analysis: Regional Trends in Patent Distribution</h2>
+        <!-- Header -->
+        <header>
+            <h1>Patent Distribution Across US Metropolitan Areas</h1>
+            <p class="subtitle">An Analysis of Innovation Trends from 2000 to 2015</p>
+        </header>
+
+        <!-- Visualization 1: Main Patent Distribution -->
+        <section class="viz-section">
+            <h2 class="viz-title">1. Geographic Distribution of Patent Activity</h2>
             
-            <p>This choropleth visualization reveals significant geographic concentration in US patent activity from 2000-2015, with clear dominance by technology-focused metropolitan areas.</p>
+            <iframe src="patent_choropleth_interactive.html" title="Patent Distribution Map"></iframe>
             
-            <p><strong>Regional Concentration:</strong> The San Francisco Bay Area (San Jose and San Francisco combined) leads US innovation, accounting for over 233,000 patents during this period. This West Coast dominance extends to Seattle, Los Angeles, and San Diego, collectively representing the nation's primary innovation corridor. The top 10 metropolitan areas account for approximately 45% of all US patents, indicating high geographic concentration of innovative activity.</p>
+            <div class="analysis">
+                <p>Looking at where patents come from across the country, there's a pretty clear story. The Bay Area absolutely dominates—San Jose alone accounts for over 143,000 patents during this fifteen-year period. When you add San Francisco to that, the region becomes the undisputed innovation capital of the United States.</p>
+                
+                <p>What struck me most was how concentrated everything is. The top ten metropolitan areas generate nearly half of all patents in the country. That's a massive concentration when you consider there are over 350 metros with at least some patent activity. The West Coast in general seems to be where innovation happens, with Seattle, LA, and San Diego all showing up as major hubs.</p>
+                
+                <div class="key-finding">
+                    <strong>Key Observation:</strong> The logarithmic scale I used here really helps show something important—even though places like San Jose completely dwarf everyone else in raw numbers, there are actually hundreds of smaller metros across the country consistently producing patents. They're just operating at a completely different scale.
+                </div>
+                
+                <p>The East Coast has its strengths too. Boston, New York, and Philadelphia form a solid corridor, though they're growing more slowly than the Western tech hubs. What's interesting is that traditional manufacturing centers like Detroit and Chicago still maintain significant patent output. Detroit especially caught my eye—despite all the challenges the auto industry has faced, they're still producing thousands of patents annually.</p>
+                
+                <p>Over time, there's clear acceleration. Patents nationwide went from around 80,000 in 2000 to 135,000 in 2015. The growth really picked up after 2009, which makes sense given the economic recovery and the tech sector boom during that period. But the growth isn't evenly distributed—the rich are getting richer, so to speak.</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Visualization 2: Change/Delta Map -->
+        <section class="viz-section">
+            <h2 class="viz-title">2. Regional Changes in Patent Activity (2000-2015)</h2>
             
-            <p><strong>Temporal Trends:</strong> Patent activity shows strong growth from 2000 to 2015, increasing from approximately 80,000 to 135,000 annual patents—a 68% increase. This growth accelerated notably after 2009, coinciding with economic recovery and increased technology sector investment. The visualization's logarithmic scale reveals that while elite innovation hubs dominate in absolute numbers, mid-tier metropolitan areas (100-1,000 patents annually) demonstrate consistent innovative capacity across diverse US regions.</p>
+            <iframe src="patent_delta_filtered.html" title="Patent Change Map"></iframe>
             
-            <p><strong>Emerging Patterns:</strong> Traditional manufacturing centers like Detroit maintain patent presence despite industrial shifts, while Sun Belt cities including Austin and Raleigh show accelerating growth trajectories. The East Coast corridor from Boston through New York to Philadelphia remains robust, though growing at slower rates than Western technology hubs.</p>
-            
-            <p>These patterns suggest that while innovation is democratizing across more US metros, competitive advantages in patent generation remain concentrated in regions with robust technology sectors, research universities, and venture capital access.</p>
-        </div>
+            <div class="analysis">
+                <p>This second map tells a really different story. Instead of looking at total patent counts, I wanted to see which regions were growing or shrinking relative to where they started. The patterns here are honestly more revealing than the first map.</p>
+                
+                <p>Seattle jumps out immediately—they more than tripled their patent output over these fifteen years. Austin and Raleigh show similar explosive growth. These aren't traditionally huge patent producers, but they've clearly become major players. The whole Sun Belt seems to be emerging as a real competitor to the traditional innovation centers.</p>
+                
+                <div class="key-finding">
+                    <strong>Surprising Finding:</strong> Some areas that looked strong in the first map actually grew relatively slowly. New York, for instance, has huge patent numbers but only moderate growth rates. Meanwhile, smaller metros in the South and Mountain West are seeing 150-200% increases, even if their absolute numbers are still smaller.
+                </div>
+                
+                <p>The decline areas are concentrated in pretty predictable places—upstate New York, parts of the Midwest, and some areas that were heavily dependent on traditional manufacturing. Boise is an interesting case because it actually had decent patent numbers in 2000, but they dropped significantly. Rochester, New York is similar. These seem to be places where specific industries or companies drove earlier patent activity, and when those declined, so did the patents.</p>
+                
+                <p>The category filters really help here. When you filter to just "Strong Growth," the West Coast and Sun Belt light up. When you look at "Decline," you see the old manufacturing belt. What's happening seems pretty clear: innovation is shifting toward cities with major universities, tech sectors, and venture capital access, while places built around traditional industries are struggling to keep up.</p>
+                
+                <p>One thing that surprised me was how many metros fall into the "Stable" category—not huge growth, not decline, just steady. These are probably places with diversified economies that aren't boom-or-bust.</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Footer -->
+        <footer>
+            <p><strong>Data Source:</strong> United States Patent and Trademark Office (USPTO)</p>
+            <p><strong>Geographic Data:</strong> US Census Bureau Metropolitan Statistical Areas</p>
+            <p><strong>Analysis Period:</strong> 2000-2015</p>
+            <p style="margin-top: 20px; color: #95a5a6;">Created for CompViz - Northeastern University</p>
+        </footer>
     </div>
 </body>
 </html>
-```
-
-4. Click **"Commit changes"**
-
----
-
-### **Step 6: Your Final URLs**
-
-After creating index.html, you have:
-
-**Main page (with analysis):**
-```
-https://mihir-parab30.github.io/patent_viz/
-```
-
-**Just the map:**
-```
-https://mihir-parab30.github.io/patent_viz/patent_choropleth_interactive.html
-```
-
----
-
-### **Step 7: Submit Your Assignment**
-
-Submit this URL:
-```
-https://mihir-parab30.github.io/patent_viz/
