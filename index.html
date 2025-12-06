@@ -109,7 +109,7 @@
         <!-- Header -->
         <header>
             <h1>Patent Distribution Across US Metropolitan Areas</h1>
-            <p class="subtitle">An Analysis of Innovation Trends from 2000 to 2015</p>
+            <p class="subtitle">An Analysis of Patent Counts Trends from 2000 to 2015</p>
         </header>
 
         <!-- Visualization 1: Main Patent Distribution -->
@@ -119,17 +119,16 @@
             <iframe src="patent_choropleth_interactive.html" title="Patent Distribution Map"></iframe>
             
             <div class="analysis">
-                <p>Looking at where patents come from across the country, there's a pretty clear story. The Bay Area absolutely dominates—San Jose alone accounts for over 143,000 patents during this fifteen-year period. When you add San Francisco to that, the region becomes the undisputed innovation capital of the United States.</p>
+                <p>The above visualization shows the patent counts across U.S. Metropoliton Statistical Areas (MSAs) for a selected year using a chloropeth map. Each MSA is shaded according to its patent count, where darker colors represent higher values and lighter colours represent lower values. </p>
                 
-                <p>What struck me most was how concentrated everything is. The top ten metropolitan areas generate nearly half of all patents in the country. That's a massive concentration when you consider there are over 350 metros with at least some patent activity. The West Coast in general seems to be where innovation happens, with Seattle, LA, and San Diego all showing up as major hubs.</p>
+                <p>A dropdown menu at the top left allows to swtich between years from 2000 to 2015. When a year is selected, the shading pattern of map changes according to the patent count values of that year.</p>
                 
                 <div class="key-finding">
-                    <strong>Key Observation:</strong> The logarithmic scale I used here really helps show something important—even though places like San Jose completely dwarf everyone else in raw numbers, there are actually hundreds of smaller metros across the country consistently producing patents. They're just operating at a completely different scale.
+                    <strong>Key Observation:</strong> The map has red markers for the top 5 MSAs having the highet patent counts for the seletced year. The top 5 are San Jose, San Francisco, NYC, Boston and Los Angeles. The top 5 remains similar across the years.
                 </div>
                 
-                <p>The East Coast has its strengths too. Boston, New York, and Philadelphia form a solid corridor, though they're growing more slowly than the Western tech hubs. What's interesting is that traditional manufacturing centers like Detroit and Chicago still maintain significant patent output. Detroit especially caught my eye—despite all the challenges the auto industry has faced, they're still producing thousands of patents annually.</p>
+                <p>The west coast and east coast show the highest number of patents. In the middle, Chicago and Detroit is showing high number of patent counts. Overall, the patents are increased nationwide with a subtotal of 80,000 in 2000 to 135,000 in 2015. </p>
                 
-                <p>Over time, there's clear acceleration. Patents nationwide went from around 80,000 in 2000 to 135,000 in 2015. The growth really picked up after 2009, which makes sense given the economic recovery and the tech sector boom during that period. But the growth isn't evenly distributed—the rich are getting richer, so to speak.</p>
             </div>
         </section>
 
@@ -142,18 +141,17 @@
             <iframe src="patent_delta_filtered.html" title="Patent Change Map"></iframe>
             
             <div class="analysis">
-                <p>This second map tells a really different story. Instead of looking at total patent counts, I wanted to see which regions were growing or shrinking relative to where they started. The patterns here are honestly more revealing than the first map.</p>
+                <p>The above visualization shows the distribution of delta percentage change in patent activity across U.S. metropolitan statistical areas from 2000 to 2015. In contrast to the first map, this second choropleth map displays change in number of patents in terms of percentage where green areas represent positive growth, while red areas show declines. </p>
                 
-                <p>Seattle jumps out immediately—they more than tripled their patent output over these fifteen years. Austin and Raleigh show similar explosive growth. These aren't traditionally huge patent producers, but they've clearly become major players. The whole Sun Belt seems to be emerging as a real competitor to the traditional innovation centers.</p>
+                <p>This map shows changes occur which vary across regions. A category filter is a dropdown which allows to see MSAs within specific growth ranges.</p>
                 
                 <div class="key-finding">
-                    <strong>Surprising Finding:</strong> Some areas that looked strong in the first map actually grew relatively slowly. New York, for instance, has huge patent numbers but only moderate growth rates. Meanwhile, smaller metros in the South and Mountain West are seeing 150-200% increases, even if their absolute numbers are still smaller.
+                    <strong>Key Observation:</strong> The map shows that Seattle, San Jose, Sacramento, Salt Lake City, regions around Colorado and Denver have strong growth in the number of patents count. Some areas e.g. New York has a huge number of patent counts but showed a moderate growth rate. The darkest red decline MSAs can be seen in Rochester, Buffalo and in the Midwest it can be seen in Detroit and Ohio. 
                 </div>
                 
-                <p>The decline areas are concentrated in pretty predictable places—upstate New York, parts of the Midwest, and some areas that were heavily dependent on traditional manufacturing. Boise is an interesting case because it actually had decent patent numbers in 2000, but they dropped significantly. Rochester, New York is similar. These seem to be places where specific industries or companies drove earlier patent activity, and when those declined, so did the patents.</p>
+                <p>Overall, it can be seen that most MSAs fall in the moderate growth rate category with some having highest growth rate while some have seen strongest decline. Some also fall under single digit percentage change in growth. </p>
                 
-                <p>The category filters really help here. When you filter to just "Strong Growth," the West Coast and Sun Belt light up. When you look at "Decline," you see the old manufacturing belt. What's happening seems pretty clear: innovation is shifting toward cities with major universities, tech sectors, and venture capital access, while places built around traditional industries are struggling to keep up.</p>
-                
+                <p>The combination of both the visualization gives a broader picture of regional patent trends across the Metropolitan Statistical Areas of United States. </p>
                 <p>One thing that surprised me was how many metros fall into the "Stable" category—not huge growth, not decline, just steady. These are probably places with diversified economies that aren't boom-or-bust.</p>
             </div>
         </section>
@@ -165,7 +163,7 @@
             <p><strong>Data Source:</strong> United States Patent and Trademark Office (USPTO)</p>
             <p><strong>Geographic Data:</strong> US Census Bureau Metropolitan Statistical Areas</p>
             <p><strong>Analysis Period:</strong> 2000-2015</p>
-            <p style="margin-top: 20px; color: #95a5a6;">Created for CompViz - Northeastern University</p>
+            <p style="margin-top: 20px; color: #95a5a6;">Computational and Visualization Assignment 3 - Northeastern University</p>
         </footer>
     </div>
 </body>
