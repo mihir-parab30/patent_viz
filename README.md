@@ -39,7 +39,7 @@ It highlights where innovation is concentrated, which regions grew, and which on
 ### 1) Patent Activity Change (2000–2015)
 Green = growth, Red = decline. Darker colors mean larger change.
 
-![Patent Activity Change Map](Regional Changes in Patent Activity.png)
+![Patent Activity Change Map](Regional-Changes-in-Patent-Activity.png)
 
 **Insight:** Growth is uneven. Some MSAs show strong increases, while many others are flat or declining.
 
@@ -48,7 +48,7 @@ Green = growth, Red = decline. Darker colors mean larger change.
 ### 2) Patent Distribution Across MSAs (2015)
 Color intensity shows patent volume (log scale for readability). Top MSAs are labeled.
 
-![Patent Distribution Map](Geographic Distribution of Patent Activity.png)
+![Patent Distribution Map](Geographic-Distribution-of-Patent-Activity.png)
 
 **Insight:** Patent activity is highly concentrated in a small number of metros.
 
